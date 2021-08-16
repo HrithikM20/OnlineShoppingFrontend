@@ -1,0 +1,128 @@
+<app-header></app-header>
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="card col-2 ml-5" style="height: 600px">
+      <div class="card-body">
+        <div class="card-header">
+          <strong>Sort</strong>
+        </div>
+        <hr
+          class="bg-dark mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 200px; height: 2px"
+        />
+
+        <div class="container">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="radioButton"
+              id="inlineRadio1"
+              value="asc"
+              (change)="onRadioClick($event)"
+            />
+            <label class="form-check-label" for="inlineRadio1">Ascending</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="radioButton"
+              id="inlineRadio2"
+              value="desc"
+              (change)="onRadioClick($event)"
+            />
+            <label class="form-check-label" for="inlineRadio2"
+              >Descending</label
+            >
+          </div>
+          <button
+            type="button"
+            class="btn btn-outline-dark my-2"
+            (click)="onBrandSortClicked()"
+          >
+            Brand
+          </button>
+          <br />
+          <button
+            type="button"
+            class="btn btn-outline-dark my-2"
+            (click)="onPriceSortClicked()"
+          >
+            Price
+          </button>
+        </div>
+        <strong>Filter</strong>
+        <div class="container mb-4">
+          <input
+            class="form-control form-control-sm my-4"
+            type="text"
+            placeholder="Enter Brand Name"
+            [(ngModel)]="pBrand"
+          />
+          <input
+            class="form-control form-control-sm my-4"
+            type="number"
+            placeholder="Enter Starting Value"
+            [(ngModel)]="pStart"
+          />
+          <input
+            class="form-control form-control-sm my-4"
+            type="number"
+            placeholder="Enter Ending Value"
+            [(ngModel)]="pEnd"
+          />
+          <button class="btn btn-outline-dark mb-2" (click)="onFilterClick()">
+            Filter
+          </button>
+        </div>
+        <br /><br />
+        <button
+          class="btn btn-warning my-2 mr-4"
+          *ngIf="showCompareButton"
+          [routerLink]="['/compare-product']"
+        >
+          Compare Selected Products
+        </button>
+      </div>
+    </div>
+    <div class="col 1"></div>
+    <!-- -------------------------------------Product list------------------ -->
+    <div class="col-9">
+      <div
+        class="container border border-dark my-2"
+        *ngFor="let product of products; let i = index"
+      >
+        <div class="row">
+          <div class="col-2 my-2 text-center">
+            <img
+              [src]="product.pImage1"
+              alt="pImage"
+              style="width: 100px; height: 200px"
+            />
+          </div>
+          <div class="col-10 my-2 mr-10">
+            <strong>{{ product.pBrand }} {{ product.pName }}</strong> <br />
+            <strong>Rs : {{ product.pPrice }}</strong> <br />
+            <button
+              class="btn btn-outline-danger my-2"
+              (click)="showProductById(product)"
+            >
+              View Product
+            </button>
+            <br />
+            <input
+              type="checkbox"
+              name="compare"
+              id="compareProduct"
+              (click)="onCompareClick(product)"
+            />
+            Compare
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

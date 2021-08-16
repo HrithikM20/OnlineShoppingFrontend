@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+
+<div class="container py-5">
+    <table border="2px">
+        <tr *ngFor =" let wishlist of userWishlist">
+            <td><img src="{{wishlist.pImage1}}" style="width:100px;height:128px;"></td>
+            <td>{{wishlist.pName}}</td>
+            <td>{{wishlist.pBrand}}</td>
+            <td>{{wishlist.pPrice}}</td>
+            <td> <button type="button" class="btn btn-primary cart" (click)="addToMyCart(wishlist.pId,wishlist.wId)">
+                Add To cart</button>
+                &nbsp;
+                <button class="btn btn-danger" (click)="onDeleteWishlistProductClick(wishlist.wId)">Delete item</button></td>
+        </tr>
+    </table>
+  
+</div>
+<app-footer></app-footer>

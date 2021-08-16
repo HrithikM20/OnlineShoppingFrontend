@@ -1,0 +1,27 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">   
+</head>  
+<body>  
+    <form name="myForm">  
+        <div class="container">  
+            <h1> EasyBuy User Registeration</h1>
+            <hr>  
+            <label required><b>Name of the User</b></label>   
+            <input type="text" name="name" id="nme" placeholder= "Enter Username" size="15" [(ngModel)]=userSignUp.uName required aria-required="true"/>   
+            <div>  
+                <label for="psw"><b>Password</b></label>  
+                <input type="password" placeholder="Enter Password" name="psw"  [(ngModel)]=userSignUp.uPassword required aria-required="true"/> 
+                <label for="email"><b>Email</b></label>  
+                <input type="text" placeholder="Enter User Email" name="email"  [(ngModel)]=userSignUp.uEmail required aria-required="true"/>
+                <label for="text"><b>Phone Number</b></label>  
+                <input type="text" placeholder="Enter Mobile No." name="phone" size="10"  [(ngModel)]=userSignUp.uPhone required aria-required="true"/>   
+                <label for="text"><b>Address</b></label>  
+                <input type="text" placeholder="Enter Address" name="address" [(ngModel)]=userSignUp.uAddress required aria-required="true"/>  
+                <button type="submit" class="registerbtn" (click)="register()">Register</button>    
+            </div>
+        </div>
+    </form>  
+</body>  
+</html>  

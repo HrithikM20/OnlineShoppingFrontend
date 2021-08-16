@@ -1,0 +1,33 @@
+<app-admin-header></app-admin-header>
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-1">
+        </div>
+        <div class="col-9 border border-dark">
+           <table class="container border border-dark my-2" >
+            <thead>
+                <tr>
+                    <th>Retailer Id</th>
+                    <th>Retailer Name</th>
+                    <th>Retailer Email</th>
+                    <th>Retailer Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let retailer of retailers">
+                    <td>{{retailer.rId}}</td>
+                    <td>{{retailer.rName}}</td>
+                    <td>{{retailer.rEmail}}</td>
+                    <td>{{retailer.rPhone}}</td>
+                    
+                    <button type=button (click)="deleteEmployee(retailer.rId)">Delete</button>
+                    
+                </tr>
+            </tbody>
+
+           </table>
+        </div>
+    </div>
+</div>

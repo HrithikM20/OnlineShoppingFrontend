@@ -1,0 +1,40 @@
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat scroll center scroll;
+  
+    background-size: cover;
+  }
+  
+  .carousel-item ::before {
+    content: "";
+  
+    position: absolute;
+  }
+  
+  .container-fluid {
+    margin-top: 4%;
+  }
+  
+  .inner {
+    overflow: hidden;
+  }
+  .inner:hover {
+    transform: scale(1.1);
+  }
+  .inner img {
+    transition: all 1.5s ease;
+  }
+  
+  .card {
+    border: none;
+    outline: none;
+    background-color: cadetblue;
+    border-radius: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-15px);
+    transition: transform 0.3s;
+  }

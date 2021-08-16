@@ -1,0 +1,49 @@
+<div class="main"><!--outer most-->
+    <div class="signin">
+        <h2>SignIn</h2>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="loginUser()">
+        
+        <div class="InputFields">
+            <input type="text" formControlName="email" placeholder="Enter email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  [(ngModel)]="email" name="email" />
+           
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+            
+        </div>
+        <div class="InputFields">
+            <input type="password" placeholder="Enter password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [(ngModel)]="password" name="password"  />
+
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 2 characters</div>
+            </div>
+
+
+            
+           <a class="forgot" type="button" tabindex="-1" (click)="forgotPassword()">
+                <span>Forgot?</span>
+            </a>
+            
+        </div>
+        
+        
+        <div class="submit">
+            <button class="submitButton" type="submit" (click)="loginUser()" >
+            LogIn
+            </button>
+        </div>
+
+        <div class="new">
+            
+            Not registered ?<a href="Create an account">Create an account.</a> 
+                
+        </div>
+            
+    </form>
+    <div *ngIf="uId$ | async as uId">
+        {{moveToHomePage(uId)}}
+    </div>
+</div>

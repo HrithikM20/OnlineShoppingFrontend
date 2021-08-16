@@ -1,0 +1,43 @@
+<app-retailer-header></app-retailer-header>
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <div class="contain py-5">
+                <h3>ADD PRODUCT</h3>
+                <form>
+                  Prodcut-Price             <input type="text" class="fomr-control" name="t3" [(ngModel)]=product.pPrice /><br/>
+                  Product-Name              <input type="text" class="form-control" name="t1" [(ngModel)]=product.pName /><br />
+                  Product-Category          <input type="text" class="form-control" name="t4" [(ngModel)]=product.pCategory /><br />
+                  Product-Sub-Category      <input type="text" class="form-control" name="t5" [(ngModel)]=product.pSubCategory/><br/>
+                  Product-Description       <input type="text" class="form-control" name="t6" [(ngModel)]=product.pDescription /><br/>
+                  Product-Quantity          <input type="text" class="form-control" name="t7" [(ngModel)]=product.pQty/><br/>
+                  Product-Image-1           <input type="text" class="form-control" name="t8" [(ngModel)]=product.pImage1/><br/>
+                  Product-Image-2           <input type="text" class="form-control" name="t9" [(ngModel)]=product.pImage2/><br/> 
+                  Prodcut-Brand Name        <input type="text" class="form-control" name="t2" [(ngModel)]=product.pBrand /><br/>
+            
+                  <button type="submit" class="btn btn-success" (click)="onAddProduct()"> Add Product </button> 
+                </form>
+                </div>
+        </div>
+        <div class="col-7">
+            <div class="container py-5">
+                <h2></h2>
+                <h4>Retailer Name      :<b>{{retailer.rName}}</b><br></h4>
+                <h4>Retailer Email     :<b>{{retailer.rEmail}}</b><br></h4>
+                <h4>Retailer Mobile No :<b>{{retailer.rPhone}}</b><br></h4>
+            </div>
+            <div *ngFor="let myProduct of myProducts">
+                
+                <div class="card" style="width: 18rem;">
+                    <img [src]="myProduct.pImage1" alt="pImage" style="width: 200px; height: 250px;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{myProduct.pBrand}}</h5>
+                      <p class="card-text"><strong>{{myProduct.pName}}</strong> <br>
+                        <strong>{{myProduct.pPrice}}</strong> <br> </p>
+                    </div>
+                  </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+
+<div class="container py-5">
+  <div class="card">
+    <div class="card-header">
+      <h3>Sign Up Here</h3>
+    </div>
+    <form>
+      Name: <br>
+      <input type="text" class="form-control" name="t2" [(ngModel)]=userSignUp.uName /><br />
+      Password:<br>
+      <input type="password" class="form-control" name="t3" [(ngModel)]=userSignUp.uPassword /><br />
+
+      Email:<br>
+      <input type="text" class="form-control" name="t4" [(ngModel)]=userSignUp.uEmail /><br />
+      Mobile:<br>
+      <input type="text" class="form-control" name="t4" [(ngModel)]=userSignUp.uPhone /><br />
+      Address:<br>
+      <input type="text" class="form-control" name="t2" [(ngModel)]=userSignUp.uAddress /><br /> <br>
+      <button type="submit" class="btn btn-success" (click)="onRegisterClick()"> Register </button>
+    </form>
+  </div>
+    
+</div>
+

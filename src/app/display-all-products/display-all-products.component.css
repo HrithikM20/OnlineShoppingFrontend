@@ -1,0 +1,7 @@
+.card {
+    border: none;
+    outline: none;
+    background-color: cadetblue;
+    border-radius: 20px;
+    transition: transform 0.3s;
+  }

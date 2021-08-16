@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2 text-center">
+          <h3><span class="badge badge-pill badge-dark"><h1>EasyCart</h1></span></h3> 
+        </div>
+        <div class="col-2 text-center">
+            <div class="btn-group dropright" style="float: right;">
+                    <button class="btn btn-danger" (click)="logoutAdmin()">
+                        Logout
+                    </button>
+                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropright</span>
+                </button>
+                <div class="dropdown-menu">
+                  <!-- Dropdown menu links -->
+                  <button class="dropdown-item " [routerLink]="['/admin-retailer']" 
+                  *ngIf="true"
+                  >My Retailers</button>
+                </div>
+              </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<app-header></app-header>
+<!-- <button style="background-color: darkred;width: 100px;height: 45px;border-radius: 10px;margin-left: 1100px;" (click)="logOut()"><h2>LOGOUT</h2></button> -->
+
+<div class="container py-5">
+    <table border="2px">
+        <tr *ngFor =" let cart of userCart">
+            <td><img src="{{'../' + cart.pImage1}}" style="width:128px;height:128px;"></td>
+            <td>{{cart.pName}}</td>
+            <td>{{cart.pBrand}}</td>
+            <td>{{cart.pPrice}}</td>
+            <br>
+            <td>{{getTotalValue(cart.pPrice,cart.qty)}}</td>
+        </tr>
+    </table>
+    <input type="text" placeholder="Enter Payment Type" id="payType" [(ngModel)]="payType"> &nbsp;
+    <button class="btn btn-warning my-2" (click)="placeOrder()">Buy Products</button> &nbsp;
+    <strong>Your Total Cart Value is {{totalPrice}}</strong>
+</div>
+<app-footer></app-footer>

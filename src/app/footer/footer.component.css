@@ -1,0 +1,12 @@
+.page-footer {
+    margin-top: 4%;
+  }
+  .nav-list {
+    padding: 0 15px;
+    height: 80px;
+    line-height: 80px;
+    position: absolute;
+  }
+  .btn {
+    background-color: cadetblue;
+  }
