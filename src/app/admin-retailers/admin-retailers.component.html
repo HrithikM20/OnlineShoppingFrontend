@@ -1,33 +1,32 @@
 <app-admin-header></app-admin-header>
 <div class="container-fluid my-4">
     <div class="row">
-        <div class="col-2">
-        </div>
         <div class="col-1">
         </div>
-        <div class="col-9 border border-dark">
-           <table class="container border border-dark my-2" >
+        <div class="col-10 border border-dark">
+           <table class="table table-hover">
             <thead>
-                <tr>
-                    <th>Retailer Id</th>
-                    <th>Retailer Name</th>
-                    <th>Retailer Email</th>
-                    <th>Retailer Phone</th>
-                </tr>
+              <tr class="font-weight-bold">
+                <th scope="col">Retailer Id</th>
+                <th scope="col">Retailer Name</th>
+                <th scope="col">Retailer Email</th>
+                <th scope="col">Retailer Phone</th>
+              </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let retailer of retailers">
+              <tr *ngFor="let retailer of retailers">
                     <td>{{retailer.rId}}</td>
                     <td>{{retailer.rName}}</td>
                     <td>{{retailer.rEmail}}</td>
                     <td>{{retailer.rPhone}}</td>
                     
-                    <button type=button (click)="deleteEmployee(retailer.rId)">Delete</button>
+                    <td><button type=button class="button btn-danger" (click)="deleteEmployee(retailer.rId)">Delete</button></td>
                     
                 </tr>
             </tbody>
+          </table>
 
-           </table>
         </div>
     </div>
 </div>
+

@@ -4,10 +4,11 @@ import { Observable } from 'rxjs';
 import { Reset } from '../Extra ts files/Reset';
 import { UserDetails } from '../Extra ts files/UserDetails';
 import { UserSignUp } from '../Extra ts files/UserSignUp';
-import { Login } from '../user-login/Login';
+
 import { PlacedOrder } from '../Extra ts files/PlacedOrder';
 import { Cart } from '../Extra ts files/Cart';
 import { Wishlist } from '../Extra ts files/Wishlist';
+import { Login } from '../Extra ts files/Login';
 
 @Injectable({
   providedIn: 'root'
@@ -103,7 +104,7 @@ export class CustomerServiceService {
   addToMyWishlist(uId: string, pId: string) {
     this._url = this._tempurl;
     this._url += 'addToMyWishlist/' + uId + '/' + pId;
-    return this._http.get(this._url, { responseType: 'text' });
+    return this._http.post(this._url, { responseType: 'text' });
   }
 
 }

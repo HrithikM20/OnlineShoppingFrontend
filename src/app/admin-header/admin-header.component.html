@@ -1,24 +1,27 @@
-<div class="container">
-    <div class="row">
-        <div class="col-2 text-center">
-          <h3><span class="badge badge-pill badge-dark"><h1>EasyCart</h1></span></h3> 
-        </div>
-        <div class="col-2 text-center">
-            <div class="btn-group dropright" style="float: right;">
-                    <button class="btn btn-danger" (click)="logoutAdmin()">
-                        Logout
-                    </button>
-                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="sr-only">Toggle Dropright</span>
+<div class="container-fluid h-25 border border-primary  p-2">
+  <div class="row ">
+      <div class="col-2 text-center">
+          <span class="badge badge-pill badge-dark" [routerLink]="['/admin-profile']">
+            <h3>EasyBuy</h3>
+            <i class="fas fa-shopping-cart"></i>
+          </span>
+      </div>
+      <div class="col-7"></div>
+      <div class="text-center">
+          <div>
+                  <button class="btn btn-danger" (click)="updateRetailer()">
+                     Update Retailer
+                  </button>
+          
+                  <button class="btn btn-danger" (click)="showAll()">
+                    All Retailer
+                 </button>
+                 <button class="btn btn-danger" (click)="logoutAdmin()">
+                  Logout 
                 </button>
-                <div class="dropdown-menu">
-                  <!-- Dropdown menu links -->
-                  <button class="dropdown-item " [routerLink]="['/admin-retailer']" 
-                  *ngIf="true"
-                  >My Retailers</button>
-                </div>
-              </div>
-            
+                  
+          
+          </div>
         </div>
-    </div>
+  </div>
 </div>

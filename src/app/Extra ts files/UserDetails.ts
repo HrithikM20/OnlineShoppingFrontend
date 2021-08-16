@@ -3,7 +3,7 @@ export class UserDetails
     uaddress:string;
     uemail:string;
     uid: number;
-    umobile: number;
+    uMobile: number;
     uname:string;
     upassword:string;
 }

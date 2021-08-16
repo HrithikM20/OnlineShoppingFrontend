@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerServiceService } from '../Service/customer-service.service';
 import { PlacedOrder } from '../Extra ts files/PlacedOrder';
+import { UserDetails } from '../Extra ts files/UserDetails';
 
 @Component({
   selector: 'app-user-myorder',
@@ -9,8 +10,11 @@ import { PlacedOrder } from '../Extra ts files/PlacedOrder';
   styleUrls: ['./user-myorder.component.css']
 })
 export class UserMyorderComponent implements OnInit {
+
+  user : UserDetails;
   myOrders : PlacedOrder[];
-  
+  uId : number;
+
   constructor
   (
     private _customerService : CustomerServiceService,
@@ -25,7 +29,12 @@ export class UserMyorderComponent implements OnInit {
       .subscribe((data:PlacedOrder[])=>{
         this.myOrders = data;
       });
-    }
+      this.uId = parseInt(sessionStorage.getItem('user'));
+      this._customerService.getUserById(sessionStorage.getItem('user'))
+      .subscribe(data=>{
+        this.user = data;
+    });
+  }
     else
     {
       alert("User Not Logged In");

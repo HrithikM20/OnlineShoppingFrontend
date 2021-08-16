@@ -22,7 +22,7 @@ export class AdminRetailersComponent implements OnInit {
     if(sessionStorage.getItem('admin')=="null")
     {
       alert("Admin Not Logged In");
-      this._router.navigate(['home']);
+      this._router.navigate(['admin-login']);
     }
     else
     {

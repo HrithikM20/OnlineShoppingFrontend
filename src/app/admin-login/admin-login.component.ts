@@ -41,27 +41,25 @@ export class AdminLoginComponent implements OnInit {
   {
     this.submitted = true;
 
+    // stop here if form is invalid
     if (this.registerForm.invalid) {
         return;
     }
-
-    else{
+else{
+    
     this.login = new Login();
     this.login.email = this.email;
     this.login.password = this.password;
     if(this.login.email=='lydia@gmail.com' && this.login.password=='lydia123')
     {
-      sessionStorage.setItem('admin','101');
-      alert("Admin Logged in");
+      sessionStorage.setItem('admin','1');
       this._router.navigate(['admin-profile']);
-
     }
     else
     {
       alert('Admin Not Found');
     }}
   }
-
   moveToHomePage(id)
   {
     if(id<0)
@@ -74,7 +72,6 @@ export class AdminLoginComponent implements OnInit {
     this._router.navigate(['home']);
   }
   get f() { return this.registerForm.controls; }
-
 
 
 

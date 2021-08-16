@@ -35,7 +35,6 @@ import { HomeComponent } from './home/home.component';
 import { SingleProductComponent } from './single-product/single-product.component';
 import { UserCartComponent } from './user-cart/user-cart.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +62,8 @@ import { UserCartComponent } from './user-cart/user-cart.component';
     HeaderComponent,
     HomeComponent,
     SingleProductComponent,
-    UserCartComponent
+    UserCartComponent,
+
 
    
   ],

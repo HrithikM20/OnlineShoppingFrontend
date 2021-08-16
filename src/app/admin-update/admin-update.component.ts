@@ -22,7 +22,7 @@ export class AdminUpdateComponent implements OnInit {
     if(sessionStorage.getItem('admin')=="null")
     {
       alert("Admin Not Logged In");
-      this._router.navigate(['home']);
+      this._router.navigate(['admin-login']);
     }
     this.exform = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],

@@ -4,24 +4,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">   
 </head>  
 <body>  
-    <form name="myForm">  
-        <div class="container">  
-            <h1> EasyBuy User Registeration</h1>
-            <hr>  
-            <label required><b>Name of the User</b></label>   
-            <input type="text" name="name" id="nme" placeholder= "Enter Username" size="15" [(ngModel)]=userSignUp.uName required aria-required="true"/>   
-            <div>  
-                <label for="psw"><b>Password</b></label>  
-                <input type="password" placeholder="Enter Password" name="psw"  [(ngModel)]=userSignUp.uPassword required aria-required="true"/> 
-                <label for="email"><b>Email</b></label>  
-                <input type="text" placeholder="Enter User Email" name="email"  [(ngModel)]=userSignUp.uEmail required aria-required="true"/>
-                <label for="text"><b>Phone Number</b></label>  
-                <input type="text" placeholder="Enter Mobile No." name="phone" size="10"  [(ngModel)]=userSignUp.uPhone required aria-required="true"/>   
-                <label for="text"><b>Address</b></label>  
-                <input type="text" placeholder="Enter Address" name="address" [(ngModel)]=userSignUp.uAddress required aria-required="true"/>  
-                <button type="submit" class="registerbtn" (click)="register()">Register</button>    
-            </div>
-        </div>
-    </form>  
+<form name="myForm" [formGroup]="registerform">  
+  <div class="container">  
+  <h1> EasyBuy User Registeration</h1>
+  <hr>  
+  <label required><b>Name of the User</b></label>   
+<input type="text" name="name" id="nme" placeholder= "Enter Username" size="15" formControlName="username" [(ngModel)]=userSignUp.uName /> 
+<small *ngIf="registerform.get('username').invalid && registerform.get('username').touched">Name should have a min of 3 characters</small>  
+<div>  
+  <label for="psw"><b>Set Password</b></label>  
+  <input type="password" placeholder="Enter Password" name="psw" formControlName="pass1" [(ngModel)]=userSignUp.uPassword /> 
+  <small *ngIf="registerform.get('pass1').invalid && registerform.get('pass1').touched">Password must be a min of 6 characters and a max of 14 characters</small>
+  <br>
+  <br>
+  <label for="email"><b>Email</b></label>  
+ <input type="text" placeholder="Enter User Email" name="email" formControlName="mail" [(ngModel)]=userSignUp.uEmail />
+ <small *ngIf="registerform.get('mail').invalid && registerform.get('mail').touched">Enter a valid email id</small>
+ <br>
+ <br>
+ <label for="text"><b>Phone Number</b></label>  
+ <input type="text" placeholder="Enter Mobile No." name="phone" maxlength="10" formControlName="mob" [(ngModel)]=userSignUp.uPhone/>
+ <small *ngIf="registerform.get('mob').invalid && registerform.get('mob').touched">Enter a Valid Mobile Number</small>   
+ <br>
+ <br>
+ <label for="text"><b>Address</b></label>  
+ <input type="text" placeholder="Enter Address" name="address" formControlName="useraddress" [(ngModel)]=userSignUp.uAddress/> 
+ <small *ngIf="registerform.get('useraddress').invalid && registerform.get('useraddress').touched">Address required and must be within 40 characters</small> 
+ <br>   
+ <br>
+ <button type="submit" class="registerbtn" [disabled]="registerform.invalid" (click)="register()">Register</button>    
+    </div>
+  </div>
+</form>  
 </body>  
 </html>  

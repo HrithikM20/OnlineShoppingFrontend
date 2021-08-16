@@ -9,6 +9,8 @@ import { Cart } from '../Extra ts files/Cart';
   styleUrls: ['./user-place-order.component.css']
 })
 export class UserPlaceOrderComponent implements OnInit {
+
+
  totalPrice: number = 0;
   userCart: Cart[];
   uId: string;

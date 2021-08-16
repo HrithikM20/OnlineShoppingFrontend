@@ -1,26 +1,26 @@
-<app-admin-header></app-admin-header>
-<button type=button (click)="UpdateUser()">Update</button>
-
-<div class="container py-5">
+    <app-admin-header></app-admin-header>
+    <body >
+  <div class="mt-5 border border-dark border-5px container w-25 py-5">
     <form [formGroup]="exform">
-        <label><h3><strong>Add Retailer</strong></h3></label> <br>
-      Name:<br>
-      <input type="text"  formControlName="name" class="form-control" name="t2" [(ngModel)]=newRetailer.rName /><br />
-      <small *ngIf="exform.get('name').invalid && exform.get('name').touched" class="text-danger">name should have 4 characters atleast</small>
-       <br>
-      Password:<br>
-      <input type="password" formControlName="password" class="form-control" name="t3" [(ngModel)]=newRetailer.rPassword /><br />
-      <small *ngIf="exform.get('password').invalid && exform.get('password').touched" class="text-danger">password length should be 5 characters atleast</small>
-      <br>Email:<br>
-      <input type="text" formControlName="email" class="form-control" name="t4" [(ngModel)]=newRetailer.rEmail /><br />
-      <small *ngIf="exform.get('email').invalid && exform.get('email').touched" class="text-danger">Email is invalid</small>
-     
-      <br>Mobile:<br>
-       <input type="text" formControlName="mobile" class="form-control" name="t4" [(ngModel)]=newRetailer.rPhone /><br />
-       <small *ngIf="exform.get('mobile').invalid && exform.get('mobile').touched" class="text-danger">mobile number should be 10 digits</small>
-     <br><br>
-       <button type="submit" class="btn btn-success" (click)="addRetailer()" [disabled]="exform.invalid"> Add Retailer </button>
-       <br>
+      <label><h3><strong>Add Retailer</strong></h3></label> <br>
+    Name:<br>
+    <input type="text"  formControlName="name" class="form-control" name="t2" [(ngModel)]=newRetailer.rName /><br />
+    <small *ngIf="exform.get('name').invalid && exform.get('name').touched" class="text-danger">name should have 4 characters atleast</small>
+     <br>
+    Password:<br>
+    <input type="password" formControlName="password" class="form-control" name="t3" [(ngModel)]=newRetailer.rPassword /><br />
+    <small *ngIf="exform.get('password').invalid && exform.get('password').touched" class="text-danger">password length should be 5 characters atleast</small>
+    <br>Email:<br>
+    <input type="text" formControlName="email" class="form-control" name="t4" [(ngModel)]=newRetailer.rEmail /><br />
+    <small *ngIf="exform.get('email').invalid && exform.get('email').touched" class="text-danger">Email is invalid</small>
+   
+    <br>Mobile:<br>
+     <input type="text" formControlName="mobile" class="form-control" name="t4" [(ngModel)]=newRetailer.rPhone /><br />
+     <small *ngIf="exform.get('mobile').invalid && exform.get('mobile').touched" class="text-danger">mobile number should be 10 digits</small>
+   <br><br>
+     <button type="submit" class="btn btn-success" (click)="addRetailer()" [disabled]="exform.invalid"> Add Retailer </button>
+     <br>
 
-      </form>
+    </form>
     </div>
+  </body>

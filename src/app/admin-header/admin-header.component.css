@@ -1,8 +1,9 @@
-.container {
+.container-fluid {
     margin: 0;
     padding: 0;
-    background-color: royalblue;
+    background-color: cadetblue;
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
   }
+ 

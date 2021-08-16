@@ -1,17 +1,24 @@
+
 <app-header></app-header>
-<div class="card-group my-4 text-white">
-  <div class="card" *ngFor="let product of products">
-    <img
-      [src]="product.pImage1"
-      class="card-img-top"
-      alt="..."
-      style="width: 100px; height: 100px"
-    />
-    <div class="card-body">
-      <h5 class="card-title">{{ product.pName }}</h5>
-      <p class="card-text">{{ product.pPrice }}</p>
-      <p class="card-text">{{ product.pDescription }}</p>
-    </div>
-  </div>
-</div>
-<app-footer></app-footer>
+
+ <div class="container-fluid my-4">
+    <div class="row">
+        
+        <div class="col-3">
+        </div>
+        <div class="col-6 row border border-dark">
+           <div class="container row my-4 " >
+            <div class="card  m-5" *ngFor="let product of products; let i = index" style="width: 18rem;">
+                <img [src]="product.pImage1" alt="pImage" class="pl-4 pt-4" style="width: 200px; height: 250px;">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.pBrand}}</h5>
+                  <strong>{{product.pName}}</strong><br>
+                  <strong>Price : Rs {{product.pPrice}}</strong> <br>
+                  <strong>Available: {{product.pQty}}</strong><br>
+                </div>  
+            </div>   
+           </div>
+        </div>
+    </div> 
+ </div>  
+ <app-footer></app-footer>

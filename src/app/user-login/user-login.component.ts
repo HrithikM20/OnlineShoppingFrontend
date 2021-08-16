@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Login } from '../Extra ts files/Login';
 import { CustomerServiceService } from '../Service/customer-service.service';
-import { Login } from './Login';
+
 
 @Component({
   selector: 'app-user-login',
@@ -74,9 +75,12 @@ forgotPassword()
 {
   this._router.navigate(['reset-password']);
 }
+register(){
+  this._router.navigate(['register-user']);
+}
+
   get f() { return this.registerForm.controls; 
   }
 
-
-
+  
 }

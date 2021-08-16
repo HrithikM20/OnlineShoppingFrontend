@@ -2,20 +2,29 @@
 <!-- <button style="background-color: darkred;width: 100px;height: 45px;border-radius: 10px;margin-left: 1100px;" (click)="logOut()"><h2>LOGOUT</h2></button> -->
 
 
-<div class="container py-5">
-<div class="col-md-3 mx-5 py-5" *ngFor="let myOrder of myOrders">
-
+<div class="container-fluid border py-5">
   
+    <h4>User Name      :<b>{{user.uname}}</b><br></h4>
+    <h4>User Email     :<b>{{user.uemail}}</b><br></h4>
+    <h4>User Mobile No :<b>{{user.uMobile}}</b><br></h4>
+  
+  <div class="container w-50 ">
+  <div class=" col-md-3 mx-5 py-5" *ngFor="let myOrder of myOrders">
+  
+  <div class="col-7">
+    </div>
+    <div class="container py-5">
+    </div>
     <div class="card mb-8" style="width: 500px; height: 350px;">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <img src={{myOrder.pImage}} class="card-img" alt="...">
+            <img src={{myOrder.pImage}} class="card-img w-200px h-250px" alt="...">
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">Name {{myOrder.pName}}</h5>
               <p class="card-text"><p><b>Brand {{myOrder.pBrand}}</b></p>
-              <p class="card-text"><p><b>Price {{myOrder.pPrice}}</b></p>
+              <p class="card-text"><p><b>Price Rs :{{myOrder.pPrice}}</b></p>
               <p class="card-text"><p><b>Order Date {{myOrder.pOrderDate}}</b></p>
               <p class="card-text"><p><b>Quantity {{myOrder.pQty}}</b></p>
               <p class="card-text"><p><b>Purchase Type {{myOrder.pType}}</b></p>
@@ -24,6 +33,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 
 <app-footer></app-footer>

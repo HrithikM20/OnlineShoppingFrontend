@@ -23,4 +23,15 @@ export class AdminHeaderComponent implements OnInit {
     this._router.navigate(['admin-login']);
   }
 
+  updateRetailer()
+  {
+    this._router.navigate(['admin-update']);
+  }
+
+  showAll()
+  {
+    this._router.navigate(['admin-retailer']);
+  }
 }
+
+
